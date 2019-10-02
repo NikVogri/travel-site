@@ -37,6 +37,38 @@
 
     }
 
+
+    @mixin atLarge {
+
+        &__large-4 {
+            float: left;
+            width: 33.3%;
+        }
+
+        &__large-4--larger {
+            width: 37%;
+        }
+
+        &__large-6 {
+            float: left;
+            width: 50%;
+        }
+
+        &__large-8 {
+            float: right;
+            width: 66.6%;
+        }
+
+        &__large-8--smaller {
+            width: 63%;
+        }
+
+        &__b-margin-until-large {
+            margin-bottom: 0;
+        }
+
+    }
+
     &--gutters {
         margin-right: -65px;
 
@@ -45,11 +77,50 @@
         }
     }
 
+    &-small {
+        margin-right: -45px;
+    }
+
     &--gutters>div {
         padding-right: 65px;
     }
 
+    &--gutters-small>div {
+        padding-right: 45px;
+    }
+
     &--gutters-large>div {
         padding-right: 100px;
+    }
+
+    &--t-padding {
+        padding-top: 80px;
+    }
+
+    /*equal hight rules*/
+
+    &--equal-height-at-medium {
+        @mixin atMedium {
+            display: flex;
+
+        }
+
+        &>div {
+            float: none;
+            display: flex;
+        }
+    }
+
+
+    &--equal-height-at-large {
+        @mixin atLarge {
+            display: flex;
+
+        }
+
+        &>div {
+            float: none;
+            display: flex;
+        }
     }
 }
